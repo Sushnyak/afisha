@@ -33,13 +33,15 @@ public class FilmsManager {
     public String[] lastFilm() {
         int number = films.length - 1;
 
-        String[] lastFilms = new String[outputQuantity];
+        //String[] lastFilms = new String[outputQuantity];
 
-        //if (outputQuantity >= films.length) {
-        //    String[] lastFilms = new String[outputQuantity];
-        //} else {
-        //    String[] lastFilms = new String[films.length];
-        //}
+        int length = 0;
+        if (outputQuantity >= films.length) {
+            length = outputQuantity;
+        } else {
+            length = films.length - 1;
+        }
+        String[] lastFilms = new String[length];
 
         for (int i = 0; i < outputQuantity; i++) {
             System.out.println(films[number]);
