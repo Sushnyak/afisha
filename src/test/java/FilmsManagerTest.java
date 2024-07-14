@@ -65,4 +65,34 @@ public class FilmsManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    public void test3FindLastFilms() {
+        FilmsManager filmsManager = new FilmsManager(6);
+
+        filmsManager.addFilm("Легенда");
+        filmsManager.addFilm("Форсаж");
+
+        String[] expected = {"Форсаж", "Легенда"};
+        String[] actual = filmsManager.lastFilm();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    public void test4FindLastFilms() {
+        FilmsManager filmsManager = new FilmsManager();
+
+        filmsManager.addFilm("Легенда");
+        filmsManager.addFilm("Форсаж");
+        filmsManager.addFilm("Форсаж2");
+        filmsManager.addFilm("Форсаж3");
+        filmsManager.addFilm("Форсаж4");
+
+
+        String[] expected = {"Форсаж4", "Форсаж3", "Форсаж2", "Форсаж", "Легенда"};
+        String[] actual = filmsManager.lastFilm();
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
 }

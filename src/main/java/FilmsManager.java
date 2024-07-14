@@ -37,13 +37,13 @@ public class FilmsManager {
 
         int length = 0;
         if (outputQuantity >= films.length) {
-            length = outputQuantity;
+            length = films.length;
         } else {
-            length = films.length - 1;
+            length = outputQuantity;
         }
         String[] lastFilms = new String[length];
 
-        for (int i = 0; i < outputQuantity; i++) {
+        for (int i = 0; i < length; i++) {
             System.out.println(films[number]);
             lastFilms[i] = films[number];
             number = number - 1;
